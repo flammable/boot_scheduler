@@ -30,6 +30,8 @@ You can also place the files where they need to go manually, or using another to
 
 As all of our labs and podiums are running OS X 10.10.5, I haven't tested any other versions of the OS.  It should work fine on 10.9.x and lower, but please test.
 
+I'm not 100% sure how laptops would handle this setup, so we're currently only deploying this to desktop Macs (using a Munki conditional).
+
 ### Credits
 
 * boot_scheduler.sh started life as a script from [jmartinez0837's Munki Overnight script](https://github.com/jmartinez0837/Munki-Overnight).
