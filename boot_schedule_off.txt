@@ -1,0 +1,24 @@
+# All Macs will boot at 1 AM each day
+# If today's date matches any of the entries below, the machine will immediately shut down until the next day
+#
+# Dates are in the form of YYYY-MM-DD
+# Comments are optional, and can be added on the same line as the date
+# Please separate dates and comments with a space
+#
+# Example:
+# 1983-10-23 Mike's Birthday
+
+2015-11-26 Thanksgiving
+2015-11-27 Day after Thanksgiving
+2015-12-24 Christmas Eve
+2015-12-25 Christmas
+2015-12-26 Weekend after Christmas
+2015-12-27 Weekend after Christmas
+2015-12-28 Floating holiday
+2015-12-29 Floating holiday
+2015-12-30 Floating holiday
+2015-12-31 New Year's Eve
+2016-01-01 New Year's Day
+2016-01-18 MLK
+2016-03-25 Good Friday
+2016-05-30 Memorial Day
