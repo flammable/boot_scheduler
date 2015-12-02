@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Code adapted from:
-# https://github.com/jmartinez0837/Munki-Overnight
-
 grep="/usr/bin/grep"
 echo="/bin/echo"
 
