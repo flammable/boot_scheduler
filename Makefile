@@ -17,7 +17,7 @@ munkiimport: dmg
 --description "Boots the machine at 4 AM. Powers off on designated days." \
 --category "Scripts" \
 --developer "Saint Joseph's University" \
---minimum_os_version "10.7.5" \
+--minimum_os_version "10.10.5" \
 --RestartAction "RequireRestart" \
 --postuninstall_script ./munki_postuninstall_script.sh \
 "${DMG_NAME}"
