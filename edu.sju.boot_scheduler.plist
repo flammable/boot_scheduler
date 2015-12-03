@@ -17,7 +17,5 @@
 		<key>Minute</key>
 		<integer>0</integer>
 	</dict>
-	<key>StartInterval</key>
-	<integer>86400</integer>
 </dict>
 </plist>
