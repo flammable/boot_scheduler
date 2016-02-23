@@ -22,7 +22,9 @@ If any of these conditions are not met, the script exits without doing anything.
 
 ### How do I use this?
 
-We use [Munki](https://github.com/munki/munki) and [The Luggage](https://github.com/unixorn/luggage), so the package is built accordingly.  Just `cd` into the directory, then `make munkiimport`.  I recommend that you edit `boot_schedule_off.txt`, at the very least.
+I recommend making some edits before using this in production.  We use [Munki](https://github.com/munki/munki) and [The Luggage](https://github.com/unixorn/luggage), with a [luggage.local file](https://github.com/flammable/luggage_local).  You probably don't want all of that.
+
+Edit the Makefile to add your own reverse domain (rather than edu.sju), change the directory where `boot_schedule_off.txt` resides, then edit `boot_schedule_off.txt` to include your own list of holidays.
 
 You can also place the files where they need to go manually, or using another tool.
 
