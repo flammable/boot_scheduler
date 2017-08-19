@@ -1,14 +1,19 @@
 #!/bin/bash
 
-grep="/usr/bin/grep"
+awk="/usr/bin/awk"
+cut="/usr/bin/cut"
+date="/bin/date"
 echo="/bin/echo"
+grep="/usr/bin/grep"
+shutdown="/sbin/shutdown"
+who="/usr/bin/who"
 
 POWEROFF="/Library/SJU/boot_schedule_off.txt"
-TODAY=$(date "+%Y"-"%m"-"%d")
-CURRENTUSER=$(who | awk '/console/ {print $1}' | awk '!/_mbsetupuser/')
+TODAY=$(${date} "+%Y"-"%m"-"%d")
+CURRENTUSER=$(${who} | ${awk} '/console/ {print $1}' | ${awk} '!/_mbsetupuser/')
 
 # Checks for the hour of the time only; cuts to format (HH)
-SystemHour=$(date "+TIME:: %H" | cut -c 8-9)
+SystemHour=$(${date} "+TIME:: %H" | ${cut} -c 8-9)
 
 # Hour of time we have set computers to turn on (HH) done this way so it'll only run within that hour
 TurnOnTime=04
@@ -19,7 +24,7 @@ if [ "$SystemHour" = "$TurnOnTime" ] ; then
 			${echo} "Boot Scheduler: Today is a holiday."
 				if [ -z ${CURRENTUSER} ] ; then
 					${echo} "Boot Scheduler: Nobody is logged in. Shutting down."
-					shutdown -h now
+					${shutdown} -h now
 				else
 					${echo} "Boot Scheduler: This computer is in use. Exiting."
 					exit 0
