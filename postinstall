@@ -3,5 +3,6 @@
 pmset="/usr/bin/pmset"
 
 ${pmset} repeat wakeorpoweron MTWRFSU 04:00:00
+${pmset} autorestart 1
 
 exit
