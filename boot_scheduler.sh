@@ -1,16 +1,15 @@
 #!/bin/bash
 
-awk="/usr/bin/awk"
 cut="/usr/bin/cut"
 date="/bin/date"
 echo="/bin/echo"
 grep="/usr/bin/grep"
+python="/usr/bin/python"
 shutdown="/sbin/shutdown"
-who="/usr/bin/who"
 
 POWEROFF="/Library/SJU/boot_schedule_off.txt"
 TODAY=$(${date} "+%Y"-"%m"-"%d")
-CURRENTUSER=$(${who} | ${awk} '/console/ {print $1}' | ${awk} '!/_mbsetupuser/')
+CURRENTUSER=$(${python} -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
 
 # Checks for the hour of the time only; cuts to format (HH)
 SystemHour=$(${date} "+TIME:: %H" | ${cut} -c 8-9)
