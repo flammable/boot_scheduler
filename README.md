@@ -30,7 +30,7 @@ You can also place the files where they need to go manually, or using another to
 
 ### Requirements
 
-As all of our labs and podiums are running OS X 10.10.5, I haven't tested any other versions of the OS.  It should work fine on 10.9.x and lower, but please test.
+We've been using this since macOS 10.10, and I can confirm it works with macOS 10.12.
 
 I'm not 100% sure how laptops would handle this setup, so we're currently only deploying this to desktop Macs (using a Munki conditional).
 
