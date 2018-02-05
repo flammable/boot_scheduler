@@ -4,12 +4,17 @@ cut="/usr/bin/cut"
 date="/bin/date"
 echo="/bin/echo"
 grep="/usr/bin/grep"
+pmset="/usr/bin/pmset"
 python="/usr/bin/python"
 shutdown="/sbin/shutdown"
 
-POWEROFF="/Library/SJU/boot_schedule_off.txt"
+POWEROFF="/Library/Management/boot_scheduler_dates.txt"
 TODAY=$(${date} "+%Y"-"%m"-"%d")
 CURRENTUSER=$(${python} -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+
+# Ensure pmset schedule is set
+${pmset} repeat wakeorpoweron MTWRFSU 04:00:00
+${pmset} autorestart 1
 
 # Checks for the hour of the time only; cuts to format (HH)
 SystemHour=$(${date} "+TIME:: %H" | ${cut} -c 8-9)

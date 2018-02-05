@@ -4,11 +4,10 @@ TITLE=boot_scheduler
 REVERSE_DOMAIN=edu.sju
 PAYLOAD=\
 	pack-Library-LaunchDaemons-edu.sju.boot_scheduler.plist\
-	pack-usr-local-bin-boot_scheduler.sh\
-	pack-Library-SJU-boot_schedule_off.txt\
+	pack-Library-Management-boot_scheduler.sh\
 	pack-script-postinstall
 
-munkiimport: dmg
+munkiimport: pkg
 		munkiimport \
 --nointeractive \
 --subdirectory scripts \
@@ -20,4 +19,4 @@ munkiimport: dmg
 --minimum_os_version "10.10.5" \
 --RestartAction "RequireRestart" \
 --postuninstall_script ./munki_postuninstall_script.sh \
-"${DMG_NAME}"
+"${PACKAGE_FILE}"

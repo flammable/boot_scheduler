@@ -1,8 +1,8 @@
-# boot_scheduler
+# Boot Scheduler
 
 ### What is this?
 
-This is a script, a launchd item, and a text file to power on and off Macs based on a calendar.
+This is a tool to power on and off Macs based on calendar dates.
 
 ### Why does this exist?
 
@@ -12,27 +12,29 @@ We manage our Macs with Munki, and want all labs and podiums to be powered on ev
 
 ### How does it work?
 
+Boot Scheduler is comprised of two packages - `boot_scheduler` contains the launchd item, and requires a reboot for installation. `boot_scheduler_dates` contains the list of dates, and can be installed without requiring a reboot.
+
 In the postinstall script, the Mac is set to boot or wake at 4 AM every day.  The LaunchDaemon, `edu.sju.boot_scheduler.plist`, triggers at 4 AM, and runs `boot_scheduler.sh`.  `boot_scheduler.sh` shuts down the Mac if it meets all of the following conditions:
 
 * The current time is between 4 AM and 5 AM.
-* The calendar date is a holiday, as defined in `boot_schedule_off.txt`.
+* The calendar date is a holiday, as defined in `boot_scheduler_dates.txt`.
 * No user is currently logged into the machine.
 
 If any of these conditions are not met, the script exits without doing anything.
 
 ### How do I use this?
 
-I recommend making some edits before using this in production.  We use [Munki](https://github.com/munki/munki) and [The Luggage](https://github.com/unixorn/luggage), with a [luggage.local file](https://github.com/flammable/luggage_local).  You probably don't want all of that.
+You'll need [The Luggage](https://github.com/unixorn/luggage) installed. Also, make sure you have my [luggage.local file](https://github.com/flammable/luggage_local) in place (or the relevant portions copied to your luggage.local file). We use [Munki](https://github.com/munki/munki) to deploy both packages, but it's not necessarily required.
 
-Edit the Makefile to add your own reverse domain (rather than edu.sju), change the directory where `boot_schedule_off.txt` resides, then edit `boot_schedule_off.txt` to include your own list of holidays.
+Be sure to edit `boot_scheduler_dates.txt` to include your list of holidays!
 
-You can also place the files where they need to go manually, or using another tool.
+To build both packages, `cd` into each directory and run `make dmg`, `make pkg`, or `make munkiimport`.
 
 ### Requirements
 
-We've been using this since macOS 10.10, and I can confirm it works with macOS 10.12.
+We've been using this since macOS 10.10, and I can confirm it works with macOS 10.13.
 
-I'm not 100% sure how laptops would handle this setup, so we're currently only deploying this to desktop Macs (using a Munki conditional).
+I wouldn't recommend this script for use with laptops. If you're using Munki, I'd recommend using a conditional to only deploy this to desktop Macs.
 
 ### Credits
 

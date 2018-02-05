@@ -1,0 +1,53 @@
+# Dates are in the form of YYYY-MM-DD
+# Comments are optional, and can be added on the same line as the date
+# Please separate dates and comments with a space
+#
+# Example:
+# 1983-10-23 Mike's Birthday
+
+2016-07-04 Independence Day
+2016-09-05 Labor Day
+2016-11-24 Thanksgiving
+2016-11-25 Day after Thanksgiving
+2016-11-26 University closed
+2016-11-27 University closed
+2016-12-23 Christmas Eve Holiday
+2016-12-24 University closed
+2016-12-25 University closed
+2016-12-26 Christmas Day Holiday
+2016-12-27 Floating Holiday
+2016-12-28 Floating Holiday
+2016-12-29 Floating Holiday
+2016-12-30 New Year's Eve Holiday
+2016-12-31 University closed
+2017-01-01 University closed
+2017-01-02 New Year's Day Holiday
+2017-01-16 Martin Luther King Birthday
+2017-04-14 Good Friday
+2017-04-15 University closed
+2017-04-16 University closed
+2017-05-29 Memorial Day
+
+2017-07-04 Independence Day
+2017-09-04 Labor Day
+2017-10-28 Facilities power outages
+2017-11-22 President's Holiday
+2017-11-23 Thanksgiving
+2017-11-24 Day after Thanksgiving
+2017-11-25 University closed
+2017-11-26 University closed
+2017-12-23 University closed
+2017-12-24 University closed
+2017-12-25 Christmas Day Holiday
+2017-12-26 Christmas Eve Holiday
+2017-12-27 Floating Holiday 1
+2017-12-28 Floating Holiday 2
+2017-12-29 New Year's Eve Holiday
+2017-12-30 University closed
+2017-12-31 University closed
+2018-01-01 New Year's Day Holiday
+2018-01-15 Martin Luther King Birthday
+2018-03-30 Good Friday
+2018-03-31 University closed
+2018-04-01 University closed
+2018-05-28 Memorial Day

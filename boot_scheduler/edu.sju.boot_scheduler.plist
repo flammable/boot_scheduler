@@ -6,7 +6,7 @@
 	<string>edu.sju.boot_scheduler</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/boot_scheduler.sh</string>
+		<string>/Library/Management/boot_scheduler.sh</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
